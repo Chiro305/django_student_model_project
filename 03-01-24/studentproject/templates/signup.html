@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP</title>
+</head>
+<body>
+    <center>
+        <h1>SignUP</h1>
+        <hr>
+        {% if errmsg %}
+        <mark>{{errmsg}}</mark>
+        {% endif %}
+        <hr>
+        <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <label>Enter Email</label>
+        <input type="email" name="uname" required>
+        <br>
+        <label>Enter Password</label>
+        <input type="password" name="upass" required>
+        <br>
+        <label>Enter Confirm Password</label>
+        <input type="password" name="ucpass" required>
+        <br>
+        <input type="submit" value="SignUP">
+        <button><a href="{% url 'allstudents' %}">Cancel</a></button>
+        <br>
+        <h3>Already Have Account?<a href="{% url 'signin' %}">SignIN</a></h3>     
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% include 'header.html' %}
+<div class="container">
+    <div class="row">
+        <h1>Welcome to our services</h1>
+        {% if errmsg %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>ERROR!!  </strong> {{errmsg}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        <!-- {{name}}
+        {{Roll_No}}
+        {{Email}} -->
+        <table border="2px">
+            <tr>
+                <th scope="col">SID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email ID</th>
+                <th scope="col">Roll No</th>
+            </tr>
+           {% for x in userdata %}
+           <tr>
+            <td>{{x.SID}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.Email}}</td>
+            <td>{{x.Roll_No}}</td>
+           </tr>
+           {% endfor %}
+        </table>
+    </div>
+</div>
+ 
+
+
+{% include 'footer.html' %}

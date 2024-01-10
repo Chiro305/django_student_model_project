@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{studentrecord.student_name}}</title>
+</head>
+<body>
+    <center><h1>{{studentrecord.student_name}} Details</h1></center>
+    <h3><img src="{{studentrecord.photo.url}}" width="200px" height="200px"></h3>
+    <h3>id: {{studentrecord.studentid}}</h3>
+    <h3>Name: {{studentrecord.student_name}}</h3>
+    <h3>Gender: {{studentrecord.gender}}</h3>
+    <h3>Date Of Birth: {{studentrecord.dob}}</h3>
+    <h3>Address: {{studentrecord.address}}</h3>
+    <h3>Grade: {{studentrecord.grades}}</h3>
+
+    <a href="{% url 'allstudents' %}">Back to Home</a>
+</body>
+</html>

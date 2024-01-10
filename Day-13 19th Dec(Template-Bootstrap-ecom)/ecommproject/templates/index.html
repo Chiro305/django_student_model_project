@@ -1,0 +1,55 @@
+{% include 'header.html' %}
+<title>Ekart|Home</title>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 bg-light p-3">
+        <h5>Filter By Category</h5>
+            <p><a href="#">By Mobile</a></p>
+            <p><a href="#">By Cloths</a></p>
+            <p><a href="#">By Shoes</a></p>
+            <hr>
+            <h5>Filter By Price</h5>
+            <hr>
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="mb-2">
+                    <label class="form-label"><strong>Min:</strong></label>
+                    <input class="form-control" type="number" name="min" placeholder="Mininum Price">
+                </div>
+                <div class="mb-2">
+                    <input class="btn btn-danger" type="submit" name="min" value="Search">
+                </div>
+            </form>
+            <h5 class="mt-3">Sort By Price</h5>
+            <hr>
+            <p><a href="#">High to Low</a></p>
+            <p><a href="#">Low to High</a></p>
+        </div>
+
+        <div class="col-md-9 mt-4 bg-light p-3">
+            <div class="row">
+                <div class="col-md-4 mb-4 bg-dark">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/511YZk28rSL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Add to Cart</a>
+                          <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Add to Cart</a>
+                          <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}

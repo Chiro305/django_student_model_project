@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Records</title>
+</head>
+<body>
+    <center><h1>Students Data</h1>
+        {% if username %}
+        <mark>Welcome {{username}}</mark>
+        {% else %}
+        <mark>Welcome Guest</mark>
+        {% endif %}
+        <hr>
+        <a href="#">Home</a>
+        <a href="{% url 'registerstudent' %}">Register Student</a>
+        <a href="#">Login</a>
+        <a href="#">Logout</a>
+        <a href="{% url 'signup' %}">SignUp</a>
+        <a href="{% url 'signin' %}">SignIn</a>
+        <hr>
+        <br><br>
+    <table border="1" cellpadding="1px"  cellspacing="2px">
+        <tr>
+            <th>Sr No</th>
+            <th>ID</th>
+            <th>Names</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Address</th>
+            <th>Grades</th>
+            <th>Photo</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for s in studentdata %}
+        <tr>
+        <th>{{forloop.counter}}</th>
+        <th>{{s.studentid}}</th>
+        <th><a href="studentdetails/{{s.studentid}}">{{s.student_name}}</a></th>
+        <th>{{s.gender}}</th>
+        <th>{{s.dob}}</th>
+        <th>{{s.address}}</th>
+        <th>{{s.grades}}</th>
+        <th><img src="{{s.photo.url}}" width="100" height="100px"></th>
+        <th><a href="/updatestudent/{{s.studentid}}">Edit</a></th>
+        <th><a href="/deletestudents/{{s.studentid}}">Delete</a></th>   
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>

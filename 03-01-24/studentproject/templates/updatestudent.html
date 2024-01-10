@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <center>
+        <h1>Update Student</h1>
+        <hr>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+                <br>
+                <input type="submit" value="Update" >
+                <button><a href="{% url 'allstudents' %}">Cancle</a></button>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

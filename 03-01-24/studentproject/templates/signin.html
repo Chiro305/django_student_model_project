@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+</head>
+<body>
+    <center>
+        <h1>SignIn</h1>
+        <hr>
+        {% if errmsg %}
+        <mark>{{errmsg}}</mark>
+        {% endif %}
+        <hr>
+        <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <label>Enter Email</label>
+        <input type="email" name="uname" required>
+        <br>
+        <label>Enter Password</label>
+        <input type="password" name="upass" required>
+        <br>
+        <input type="submit" value="SignIn">
+        <button><a href="{% url 'allstudents' %}">Cancel</a></button>
+        <br>
+        <h3>Don't Have Account?<a href="{% url 'signup' %}">SignUP</a></h3>     
+        </form>
+    </center>
+</body>
+</html>
